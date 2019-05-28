@@ -4,26 +4,10 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-export class Home extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			seconds: 0
-		};
-	}
-
-	componentDidMount() {
-		setInterval(
-			() => this.setState({ seconds: this.state.seconds + 1 }),
-			1000
-		);
-	}
-
-	render() {
-		return (
-			<div className="text-center mt-5">
-				<h1>{this.state.seconds}</h1>
-			</div>
-		);
-	}
-}
+export const secondsCounter = props => {
+	return (
+		<div className="text-center mt-5">
+			<h1>{seconds}</h1>
+		</div>
+	);
+};

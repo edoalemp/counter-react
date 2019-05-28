@@ -9,7 +9,22 @@ import "bootstrap";
 import "../styles/index.scss";
 
 //import your own components
-import { Home } from "./component/home.js";
+//import { secondsCounter } from "./component/home.js";
+
+let seconds;
+setInterval(seconds++, 1000);
+
+const SecondsCounter = props => {
+	//setInterval((seconds = seconds + 1), 1000);
+	return (
+		<div className="text-center mt-5">
+			<h1>{props.secs}</h1>
+		</div>
+	);
+};
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(
+	<SecondsCounter secs={seconds} />,
+	document.querySelector("#app")
+);
