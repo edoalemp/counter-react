@@ -1,6 +1,7 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
+import PropType from "prop-types";
 
 //include bootstrap npm library into the bundle
 import "bootstrap";
@@ -11,8 +12,8 @@ import "../styles/index.scss";
 //import your own components
 //import { secondsCounter } from "./component/home.js";
 
-let seconds;
-setInterval(seconds++, 1000);
+let seconds = 0;
+setInterval((seconds = seconds + 1), 1000);
 
 const SecondsCounter = props => {
 	//setInterval((seconds = seconds + 1), 1000);
@@ -21,6 +22,10 @@ const SecondsCounter = props => {
 			<h1>{props.secs}</h1>
 		</div>
 	);
+};
+
+SecondsCounter.propTypes = {
+	secs: PropType.number
 };
 
 //render your react application
